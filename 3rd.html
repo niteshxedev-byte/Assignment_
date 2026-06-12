@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>3. Create an input field + button
+	When user enters text and clicks button:
+	Add item to <ul> list dynamically
+</p>
+
+<ul class="list">
+   
+</ul>
+    
+    <input type="text" class="text">
+
+<button class="btn">add in list </button>
+
+    <a href="./2nd.html">prev</a>
+    <a href="./4thd.html">next</a>
+
+
+    <script>
+        const list = document.querySelector(".list")
+        const inputText = document.querySelector(".text")
+        const button = document.querySelector(".btn")
+
+      
+     button.addEventListener("click",()=>{
+        let formattedTxt = inputText.value.trim()
+      
+        list.innerHTML += ` <li>${formattedTxt}</li>`
+        inputText.value = ""
+     })
+
+       
+
+
+
+
+    </script>
+
+</body>
+</html>

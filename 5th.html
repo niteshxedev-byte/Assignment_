@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 
+5. Mini Project: Student Registration System:
+	Features:
+		Form with:
+		(I) Name, Email, Course
+		(II) Validate inputs
+		(III) On submit: Store data in localStorage
+		(IV) Display in a table -->
+    <h2 class="notification"></h2>
+    <form action="">
+        <label for="name">Enter Name</label>
+        <input type="text" class="name">
+        <br>
+        <label for="email">Enter email address</label>
+        <input type="email" class="email">
+        <br>
+        <label for="Course">Enter email address</label>
+        <input type="text" class="course">
+        <br>
+
+        <button type="submit">set data into localStorage</button>
+    </form>
+
+
+
+
+    <h4>table space </h4>
+    <button onclick="showTable()">show table</button>
+
+
+    <div>
+        <table border="1" class="table">
+
+        </table>
+    </div>
+
+
+
+    <script>
+        const table = document.querySelector(".table")
+
+        const form = document.querySelector("form")
+        const name = document.querySelector(".name")
+        const email = document.querySelector(".email")
+        const course = document.querySelector(".course")
+ 
+
+
+        function showTable() {
+            const datajson = JSON.parse(localStorage.getItem("userData"))
+            console.log(datajson)
+
+
+if (datajson.length > 0) {
+    
+  
+    table.innerHTML = `  
+        <thead>
+            <tr class="tableHeading">
+                <th>Number</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Course</th>
+            </tr>
+        </thead>
+        <tbody class="tableBody"></tbody>
+    `;
+
+    const tableBody = table.querySelector(".tableBody");
+
+   
+    datajson.forEach(element => {
+        tableBody.innerHTML += `
+            <tr class="tablerow">
+                <td>${element.number}</td>
+                <td>${element.name}</td>
+                <td>${element.email}</td>
+                <td>${element.course}</td>
+            </tr>
+        `;
+    });
+
+} else {
+    // 3. What to show if localStorage is empty
+    table.innerHTML = `
+        <tr>
+            <td colspan="4" style="text-align: center; padding: 10px;">
+                No student data found. Please register a student first!
+            </td>
+        </tr>
+    `;
+}
+
+        
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        let number = 0
+        const notification = document.querySelector(".notification")
+        const datajson = []
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            const userDATA =
+            {
+                number: number,
+                name: name.value.trim(),
+                email: email.value.trim(),
+                course: course.value.trim()
+            }
+            datajson.push(userDATA)
+            localStorage.setItem("userData", JSON.stringify(
+                datajson
+            ))
+            number = number + 1;
+            notification.innerHTML = "data saved in localstroage"
+        })
+
+
+    </script>
+
+</body>
+
+</html>

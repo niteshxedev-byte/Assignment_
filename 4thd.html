@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;padding: 0;box-sizing: border-box;
+        }
+        .main {
+            height: 100vh;
+            width: 100vw;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main ">
+        <p>
+            4. Create a toggle button:
+            Switch between light and dark mode
+            Change background + text color of entire page
+        </p>
+        <button class="toggle">toggle</button>
+        <a href="./3rd.html">previous</a>
+          <a href="./5th.html">next</a>
+    </div>
+  
+
+    <script>
+        const main = document.querySelector(".main");
+        const toggle = document.querySelector(".toggle");
+        let dark = false
+        toggle.addEventListener("click", () => {
+
+            if (dark) {
+                main.style.backgroundColor = "white"
+                main.style.color = "black"
+                dark = false
+
+            }
+            else {
+                main.style.backgroundColor = "black"
+                main.style.color = "white"
+                dark = true
+            }
+
+        })
+    </script>
+</body>
+
+</html>
