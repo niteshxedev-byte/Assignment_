@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index_assignment</title>
+</head>
+<body>
+
+
+     <p>  1. Create a button. When clicked, change a paragraph text from:
+     "Hello Student" → "Welcome to JavaScript"</p> 
+
+    
+    <p class="paragraph">Hello Student</p>
+    <button onclick="changePara()">change the paragraph to "Welcome to JavaScript" </button>
+
+    <a href="./2nd.html">next</a>
+ 
+    <script>
+
+
+
+        //1. Create a button. When clicked, change a paragraph text from:
+	// "Hello Student" → "Welcome to JavaScript"
+
+
+        const paragraph = document.querySelector(".paragraph")
+        console.log(paragraph)
+
+        function changePara(){
+            paragraph.innerHTML = "Welcome to JavaScript"
+        }
+
+    </script>
+</body>
+</html>
