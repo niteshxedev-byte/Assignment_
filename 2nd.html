@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 20vw;
+            height: 20vw;
+            border: 4px solid black;
+            background-color: grey;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <p> 2. Create a div box and a button. On button click:
+        Change background color
+        Increase width/height
+        Add border radius
+    </p>
+    <div class="box"></div>
+    <button class="btn"> change properties</button>
+    <a href="./index.html">prev</a>
+    <a href="./3rd.html">next</a>
+    <script>
+
+        const box = document.querySelector(".box")
+        const button = document.querySelector(".btn")
+
+
+        button.addEventListener("click", () => {
+            
+            box.style.width = "40vw"
+            box.style.height = "40vw"
+            box.style.backgroundColor = "pink"
+            box.style.borderRadius = "10%"
+        })
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
